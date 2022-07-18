@@ -2,10 +2,6 @@
   box-sizing: border-box;
 }
 
-body {
-  background-color: whitesmoke;
-}
-
 nav {
   display: flex;
   align-items: center;
@@ -17,7 +13,7 @@ nav {
   margin: 0 auto;
   color: #0290ff;
   font-size: 22px;
-  height: 8rem;
+  height: 7rem;
   background-color: white;
 }
 

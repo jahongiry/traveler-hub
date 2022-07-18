@@ -1,24 +1,24 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
-import classes from "./Navigation.module.css";
-import logo from "../img/planet.png";
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+import classes from './Navigation.module.css';
+import logo from '../img/planet.png';
 
 const Navigation = () => {
   const links = [
     {
       id: 1,
-      path: "/",
-      text: "Rockets",
+      path: '/',
+      text: 'Rockets',
     },
     {
       id: 2,
-      path: "/missions",
-      text: "Missions",
+      path: '/missions',
+      text: 'Missions',
     },
     {
       id: 3,
-      path: "/myprofile",
-      text: "My profile",
+      path: '/myprofile',
+      text: 'My profile',
     },
   ];
 

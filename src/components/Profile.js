@@ -1,5 +1,3 @@
-const Profile = () => {
-  return "Test Profile";
-};
+const Profile = () => 'Test Profile';
 
 export default Profile;
