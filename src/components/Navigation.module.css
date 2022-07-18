@@ -58,3 +58,11 @@ nav ul li a:hover {
   align-items: center;
   align-content: center;
 }
+
+.underline {
+  border-bottom: 1px solid red;
+}
+
+.notUnderline {
+  text-decoration: none;
+}

@@ -25,7 +25,7 @@ const Navigation = () => {
   return (
     <nav className={classes.navBar}>
       <div className={classes.mainHeader}>
-        <img src={logo}></img>
+        <img alt="website logo" src={logo} />
         <h1>Space Travaler&apos;s Hub</h1>
       </div>
       <ul>
