@@ -1,5 +1,3 @@
-const Rockets = () => {
-  return "Test";
-};
+const Rockets = () => 'Test';
 
 export default Rockets;
