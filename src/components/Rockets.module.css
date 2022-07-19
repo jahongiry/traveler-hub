@@ -1,0 +1,15 @@
+.rocketContainer {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  padding: 1rem 6.24rem;
+}
+
+.rocketContainer button {
+  font-size: 1rem;
+  padding: 1rem 0.8rem;
+  background-color: rgb(0, 123, 255);
+  border-radius: 10px;
+  color: white;
+  border: none;
+}
