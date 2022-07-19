@@ -1,33 +1,38 @@
-const FETCH_MISSIONS = 'store/missions/FETCH_MISSIONS';
+import { createSlice } from '@reduxjs/toolkit';
 
+const initialState = [];
+
+export const missionInfo = createSlice({
+  name: 'missions',
+  initialState,
+  reducers: {
+    missions(state, action) {
+      const missionArray = [];
+      Object.keys(action.payload).forEach((key) => {
+        missionArray.push({
+          mission_id: key,
+          mission_name: action.payload[key].mission_name,
+          description: action.payload[key].description,
+        });
+      });
+      return missionArray;
+    },
+  },
+});
+
+export const missionActions = missionInfo.actions;
 
 export const getMissions = () => async (dispatch) => {
-    await fetch('https://api.spacexdata.com/v3/missions')
-      .then((res) => res.json())
-      .then((mission) => {
-        const missionTable = [];
-        Object.keys(mission).forEach((mission_id) => {
-          missionTable.push({
-            mission_id: mission_id,
-            mission_name: mission[mission_id][0].mission_name,
-            description: mission[mission_id][0].description,
-          });
-        })
-        .catch(error => {
-          console.log(error);
-      });
-            
-        dispatch({ type: FETCH_MISSIONS, missionTable });
-      });
+  const fetchingData = async () => {
+    const response = await fetch('https://api.spacexdata.com/v3/missions');
+    const data = await response.json();
+    return data;
   };
 
-const MissionReducer = (state = [], action) => {
-    switch (action.type) {
-      case FETCH_MISSIONS:
-        return action.missionTable;
-      default:
-        return state;
-    }
-  };
-
-  export default MissionReducer;
+  try {
+    const testdata = await fetchingData();
+    dispatch(missionActions.missions(testdata));
+  } catch (error) {
+    console.log(error);
+  }
+};

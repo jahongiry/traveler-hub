@@ -1,29 +1,59 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-// import AddBook from './form';
-// import SingleBook from './singleBook';
-import singleMission from './singleMisson';
-import { getMissions } from '../redux/missions/missions';
+import React from 'react';
+// import { useSelector } from 'react-redux';
+// import singleMission from './singleMisson';
+// // import { getMissions } from '../redux/missions/missions';
+
+// const DisplayMissions = () => {
+//   const missions = useSelector((state) => state.mission);
+//   console.log(missions)
+
+//   return (
+//     <div className="mission-list">
+//       {missions.map((mission) => (
+//         <singleMission
+//         // key={mission.mission_id}
+//           mission_id={mission.mission_id}
+//           mission_name={mission.mission_name}
+//           description={mission.description}
+//         />
+//       ))}
+//     </div>
+//   )};
+
+// export default DisplayMissions;
+
+import { useSelector } from 'react-redux';
 
 const DisplayMissions = () => {
-  const missions = useSelector((state) => state.missions);
-
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(getMissions(missions));
-  }, [dispatch]);
-
+  const mission = useSelector((state) => state.mission);
+  // console.log(mission);
   return (
-    <div className="mission-list">
-      {missions.map((mission) => (
-        <singleMission
-          mission_id={mission.mission_id}
-          mission_name={mission.mission_name}
-          description={mission.description}
-        />
-      ))}
+
+    <div className="missions-table">
+      <table>
+        <thead>
+          <tr>
+            <th>Mission</th>
+            <th className="discription">Description</th>
+            <th>Status</th>
+            <th>Join</th>
+          </tr>
+        </thead>
+        <tbody>
+          {mission.map((data) => (
+            <tr key={data.mission_id}>
+              <td className="mission-name">{data.mission_name}</td>
+              <td>{data.description}</td>
+              <td><button id={data.mission_id} type="submit">Not A Member</button></td>
+              <td><button id={data.mission_id} type="submit">Join Mission</button></td>
+            </tr>
+          ))}
+        </tbody>
+
+      </table>
+
     </div>
+
   );
 };
 

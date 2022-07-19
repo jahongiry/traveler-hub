@@ -1,7 +1,7 @@
-import { useSelector } from "react-redux";
-import { pageActions } from "../redux/store";
-import classes from "./Rockets.module.css";
-import rocket from "../img/rocket.jpeg";
+import { useSelector } from 'react-redux';
+// import { pageActions } from '../redux/store';
+import classes from './Rockets.module.css';
+// import rocket from '../img/rocket.jpeg';
 
 const Rockets = () => {
   const info = useSelector((state) => state.rocket);
@@ -9,7 +9,7 @@ const Rockets = () => {
   return (
     <div className={classes.rocketContainer}>
       <div>
-        <img src={info.flickr_images[0]}></img>
+        <img alt="logo" src={info.flickr_images[0]} />
       </div>
       <div>
         <h2>{info.rocket_name}</h2>

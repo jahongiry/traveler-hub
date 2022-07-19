@@ -1,14 +1,14 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   id: 0,
-  rocket_name: "",
-  description: "",
-  flickr_images: "",
+  rocket_name: '',
+  description: '',
+  flickr_images: '',
 };
 
 export const rocketInfo = createSlice({
-  name: "pages",
+  name: 'pages',
   initialState,
   reducers: {
     rockets(state, action) {
@@ -24,20 +24,18 @@ export const rocketInfo = createSlice({
 
 export const pageActions = rocketInfo.actions;
 
-export const fetchData = () => {
-  return async (dispatch) => {
-    const fetchingData = async () => {
-      const response = await fetch("https://api.spacexdata.com/v3/rockets");
-      const data = await response.json();
-      return data;
-    };
-
-    try {
-      const testdata = await fetchingData();
-      console.log(testdata);
-      dispatch(pageActions.rockets(testdata[0]));
-    } catch (error) {
-      console.log(error);
-    }
+export const fetchData = () => async (dispatch) => {
+  const fetchingData = async () => {
+    const response = await fetch('https://api.spacexdata.com/v3/rockets');
+    const data = await response.json();
+    return data;
   };
+
+  try {
+    const testdata = await fetchingData();
+    // console.log(testdata);
+    dispatch(pageActions.rockets(testdata[0]));
+  } catch (error) {
+    console.log(error);
+  }
 };

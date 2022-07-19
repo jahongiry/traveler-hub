@@ -1,14 +1,8 @@
-import React from "react";
+import React from 'react';
 // import { useDispatch } from "react-redux/es/exports";
 
-
-
-const singleMission = ({mission_id, mission_name, description}) => {
-
-
-
-  return (
-    <div className="missions-table">
+const singleMission = ({ mission_id, mission_name, description }) => (
+  <div className="missions-table">
     <table>
       <thead>
         <tr>
@@ -28,8 +22,6 @@ const singleMission = ({mission_id, mission_name, description}) => {
       </tbody>
     </table>
   </div>
-  )
-
-};
+);
 
 export default singleMission;
