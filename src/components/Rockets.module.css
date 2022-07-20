@@ -2,14 +2,39 @@
   margin-top: 2rem;
   display: grid;
   grid-template-columns: 1fr 4fr;
+  gap: 2rem;
   padding: 1rem 6.24rem;
 }
 
-.rocketContainer button {
+.images {
+  height: 100%;
+  width: 100%;
+}
+
+.reservation {
   font-size: 1rem;
   padding: 1rem 0.8rem;
   background-color: rgb(0, 123, 255);
   border-radius: 10px;
   color: white;
   border: none;
+}
+
+.cancelReservation {
+  font-size: 1rem;
+  padding: 1rem 0.8rem;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.flag {
+  background-color: rgb(27, 162, 185);
+  color: white;
+  padding: 0.2rem;
+  border-radius: 5px;
+  margin: 0.2rem;
+}
+
+.paragraph {
+  line-height: 1.8rem;
 }

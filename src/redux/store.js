@@ -12,6 +12,7 @@ export const rocketInfo = createSlice({
         rocket_name: item.rocket_name,
         description: item.description,
         flickr_images: item.flickr_images,
+        reserved: false,
       }));
       return ids;
     },
@@ -23,6 +24,17 @@ export const rocketInfo = createSlice({
           return item;
         }
         return { ...item, reserved: true };
+      });
+      return reserves;
+    },
+
+    cancelReserving(state, action) {
+      const reservedId = action.payload[1];
+      const reserves = action.payload[0].map((item) => {
+        if (item.id !== reservedId) {
+          return item;
+        }
+        return { ...item, reserved: false };
       });
       return reserves;
     },
