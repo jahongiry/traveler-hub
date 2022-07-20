@@ -1,6 +1,7 @@
 import { useSelector } from 'react-redux';
 // import { pageActions } from '../redux/store';
 import classes from './Rockets.module.css';
+// import rocket from '../img/rocket.jpeg';
 
 const Rockets = () => {
   const info = useSelector((state) => state.rocket);
