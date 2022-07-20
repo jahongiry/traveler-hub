@@ -5,7 +5,7 @@ import classes from './Rockets.module.css';
 
 const Rockets = () => {
   const info = useSelector((state) => state.rocket);
-  console.log(info);
+  // console.log(info);
 
   return (
     <>
