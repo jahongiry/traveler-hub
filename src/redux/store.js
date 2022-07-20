@@ -1,23 +1,21 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = {
-  id: 0,
-  rocket_name: "",
-  description: "",
-  flickr_images: "",
-};
+const initialState = [];
 
 export const rocketInfo = createSlice({
   name: "pages",
   initialState,
   reducers: {
     rockets(state, action) {
-      return {
-        id: action.payload.id,
-        rocket_name: action.payload.rocket_name,
-        description: action.payload.description,
-        flickr_images: action.payload.flickr_images,
-      };
+      const ids = action.payload.map((item) => {
+        return {
+          id: item.id,
+          rocket_name: item.rocket_name,
+          description: item.description,
+          flickr_images: item.flickr_images,
+        };
+      });
+      return ids;
     },
   },
 });
@@ -31,11 +29,9 @@ export const fetchData = () => {
       const data = await response.json();
       return data;
     };
-
     try {
       const testdata = await fetchingData();
-      console.log(testdata);
-      dispatch(pageActions.rockets(testdata[0]));
+      dispatch(pageActions.rockets(testdata));
     } catch (error) {
       console.log(error);
     }
