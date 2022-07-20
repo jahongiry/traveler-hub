@@ -11,6 +11,12 @@ const DisplayMissions = () => {
     const { id } = target;
     dispatch(missionActions.JoinButtonAction([mission, id]));
   };
+
+  const cancelJoining = ({target}) => {
+    const {id} = target;
+    dispatch(missionActions.CancelButtonAction([mission, id]))
+  }
+
   return (
     <div className="missions-table">
       <table>

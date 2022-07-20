@@ -13,8 +13,10 @@ export const missionInfo = createSlice({
           mission_id: key,
           mission_name: action.payload[key].mission_name,
           description: action.payload[key].description,
+          reserved: false,
         });
       });
+      // console.log(missionArray);
       return missionArray;
     },
 
@@ -27,6 +29,15 @@ export const missionInfo = createSlice({
       // console.log(newState);
       return newState;
     },
+
+    CancelButtonAction(state, action) {
+      const lastState = action.payload[1];
+      const newState = action.payload[0].map((mission) => {
+        if(mission.mission_id !== lastState) {return mission;}
+        return {...mission, reserved: false}
+      })
+      return newState
+    }
 
   },
 });
