@@ -1,9 +1,9 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = [];
 
 export const rocketInfo = createSlice({
-  name: "pages",
+  name: 'pages',
   initialState,
   reducers: {
     rockets(state, action) {
@@ -35,5 +35,4 @@ export const fetchData = () => {
     } catch (error) {
       console.log(error);
     }
-  };
 };
