@@ -1,6 +1,6 @@
 .missions-table table {
   border-collapse: collapse;
-  width: 85%;
+  width: 88%;
   margin: 0 auto;
   margin-bottom: 70px;
 }
@@ -12,12 +12,16 @@ th {
   padding: 8px;
 }
 
+.missions-table td .reserved-flag {
+  background-color: rgb(27, 162, 185);;
+}
+
 .missions-table tr:nth-child(even) {
   background-color: whitesmoke;
 }
 
 .missions-table table .discription {
-  width: 60%;
+  width: 55%;
 }
 
 .missions-table table button {
