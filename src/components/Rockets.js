@@ -1,11 +1,16 @@
-import { useSelector } from 'react-redux';
-// import { pageActions } from '../redux/store';
+import { useSelector, useDispatch } from 'react-redux';
+import { pageActions } from '../redux/store';
 import classes from './Rockets.module.css';
 // import rocket from '../img/rocket.jpeg';
 
 const Rockets = () => {
+  const dispatch = useDispatch();
   const info = useSelector((state) => state.rocket);
-  // console.log(info);
+
+  const reserve = ({ target }) => {
+    const { id } = target;
+    dispatch(pageActions.reserving([info, Number(id)]));
+  };
 
   return (
     <>
@@ -17,7 +22,9 @@ const Rockets = () => {
           <div>
             <h2>{data.rocket_name}</h2>
             <p>{data.description}</p>
-            <button type="submit">Reserve Rocket</button>
+            <button id={data.id} onClick={reserve} type="submit">
+              Reserve Rocket
+            </button>
           </div>
         </div>
       ))}

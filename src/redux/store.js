@@ -15,6 +15,17 @@ export const rocketInfo = createSlice({
       }));
       return ids;
     },
+
+    reserving(state, action) {
+      const reservedId = action.payload[1];
+      const reserves = action.payload[0].map((item) => {
+        if (item.id !== reservedId) {
+          return item;
+        }
+        return { ...item, reserved: true };
+      });
+      return reserves;
+    },
   },
 });
 
