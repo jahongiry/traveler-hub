@@ -17,6 +17,17 @@ export const missionInfo = createSlice({
       });
       return missionArray;
     },
+
+    JoinButtonAction(state, action) {
+      const lastState = action.payload[1];
+      const newState = action.payload[0].map((mission) => {
+        if (mission.mission_id !== lastState) { return mission; }
+        return { ...mission, reserved: true };
+      });
+      // console.log(newState);
+      return newState;
+    },
+
   },
 });
 

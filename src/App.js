@@ -7,7 +7,6 @@ import DisplayMissions from './components/displayMissions';
 import Navigation from './components/Navigation';
 import Profile from './components/Profile';
 import Rockets from './components/Rockets';
-
 import { fetchData } from './redux/store';
 import { getMissions } from './redux/missions/missions';
 
