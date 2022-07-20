@@ -1,41 +1,22 @@
-import classes from "./Rockets.module.css";
-import rocket from "../img/rocket.jpeg";
+import { useSelector } from 'react-redux';
+// import { pageActions } from '../redux/store';
+import classes from './Rockets.module.css';
+// import rocket from '../img/rocket.jpeg';
 
 const Rockets = () => {
-  return (
-    <>
-      <div className={classes.rocketContainer}>
-        <div>
-          <img src={rocket}></img>
-        </div>
-        <div>
-          <h2>Falcon 1</h2>
-          <p>
-            Lorem ipsum dolor sit amet. Qui consequatur itaque est eligendi
-            minus est vero praesentium qui facere dicta in similique error ut
-            voluptatem nulla! Et distinctio fugiat id sint vitae vel laudantium
-            iusto eum impedit atque et consequuntur
-          </p>
-          <button type="submit">Reserve Rocket</button>
-        </div>
-      </div>
+  const info = useSelector((state) => state.rocket);
 
-      <div className={classes.rocketContainer}>
-        <div>
-          <img src={rocket}></img>
-        </div>
-        <div>
-          <h2>Falcon 1</h2>
-          <p>
-            Lorem ipsum dolor sit amet. Qui consequatur itaque est eligendi
-            minus est vero praesentium qui facere dicta in similique error ut
-            voluptatem nulla! Et distinctio fugiat id sint vitae vel laudantium
-            iusto eum impedit atque et consequuntur
-          </p>
-          <button type="submit">Reserve Rocket</button>
-        </div>
+  return (
+    <div className={classes.rocketContainer}>
+      <div>
+        <img alt="logo" src={info.flickr_images[0]} />
       </div>
-    </>
+      <div>
+        <h2>{info.rocket_name}</h2>
+        <p>{info.description}</p>
+        <button type="submit">Reserve Rocket</button>
+      </div>
+    </div>
   );
 };
 

@@ -1,20 +1,41 @@
-// import { createSlice, configureStore } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
-// const initialState = { onPage: false };
+const initialState = {
+  id: 0,
+  rocket_name: '',
+  description: '',
+  flickr_images: '',
+};
 
-// const onPage = createSlice({
-//   name: "pages",
-//   initialState,
-//   reducers: {
-//     underLine(state) {
-//       return { onPage: !state.onPage };
-//     },
-//   },
-// });
+export const rocketInfo = createSlice({
+  name: 'pages',
+  initialState,
+  reducers: {
+    rockets(state, action) {
+      return {
+        id: action.payload.id,
+        rocket_name: action.payload.rocket_name,
+        description: action.payload.description,
+        flickr_images: action.payload.flickr_images,
+      };
+    },
+  },
+});
 
-// const store = configureStore({
-//   reducer: onPage.reducer,
-// });
+export const pageActions = rocketInfo.actions;
 
-// export const pageActions = onPage.actions;
-// export default store;
+export const fetchData = () => async (dispatch) => {
+  const fetchingData = async () => {
+    const response = await fetch('https://api.spacexdata.com/v3/rockets');
+    const data = await response.json();
+    return data;
+  };
+
+  try {
+    const testdata = await fetchingData();
+    // console.log(testdata);
+    dispatch(pageActions.rockets(testdata[0]));
+  } catch (error) {
+    console.log(error);
+  }
+};
