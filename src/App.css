@@ -1,6 +1,6 @@
 .missions-table table {
   border-collapse: collapse;
-  width: 85%;
+  width: 88%;
   margin: 0 auto;
   margin-bottom: 70px;
 }
@@ -12,15 +12,33 @@ th {
   padding: 8px;
 }
 
+.missions-table td .reserved-flag {
+  background-color: #0290ff;
+  border-radius: 5px;
+}
+
 .missions-table tr:nth-child(even) {
   background-color: whitesmoke;
 }
 
 .missions-table table .discription {
-  width: 60%;
+  width: 55%;
 }
 
 .missions-table table button {
   background-color: white;
-  height: 30px;
+
+  /* color: white; */
+
+  /* border: 2px #0290ff solid; */
+  border-radius: 5px;
+  height: 35px;
+}
+
+.missions-table table .join {
+  background-color: #0290ff;
+  color: white;
+  border: 2px #0290ff solid;
+  border-radius: 5px;
+  height: 35px;
 }

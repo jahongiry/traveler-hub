@@ -4,13 +4,19 @@ import { missionActions } from '../redux/missions/missions';
 
 const DisplayMissions = () => {
   const mission = useSelector((state) => state.mission);
-  // console.log(mission);
+  console.log(mission);
   const dispatch = useDispatch();
 
   const handleChange = ({ target }) => {
     const { id } = target;
     dispatch(missionActions.JoinButtonAction([mission, id]));
   };
+
+  const cancelJoining = ({ target }) => {
+    const { id } = target;
+    dispatch(missionActions.CancelButtonAction([mission, id]));
+  };
+
   return (
     <div className="missions-table">
       <table>
@@ -25,10 +31,18 @@ const DisplayMissions = () => {
         <tbody>
           {mission.map((data) => (
             <tr key={data.mission_id}>
-              <td className="mission-name">{data.mission_name}</td>
+              {!data.reserved && (<td className="mission-name">{data.mission_name}</td>)}
+              {data.reserved && (
+              <td className="mission-name">
+                {data.mission_name}
+                <span className="reserved-flag">&nbsp;Reserved!&nbsp;</span>
+              </td>
+              )}
               <td>{data.description}</td>
-              <td><button id={data.mission_id} type="submit">Not A Member</button></td>
-              <td><button onClick={handleChange} id={data.mission_id} type="submit">Join Mission</button></td>
+              {data.reserved && (<td><button className="join" id={data.mission_id} type="submit">ACTIVE MEMBER</button></td>)}
+              {!data.reserved && (<td><button id={data.mission_id} type="submit">NOT A MEMBER</button></td>)}
+              {data.reserved && (<td><button onClick={cancelJoining} id={data.mission_id} type="submit">LEAVE MISSION</button></td>)}
+              {!data.reserved && (<td><button className="join" onClick={handleChange} id={data.mission_id} type="submit">JOIN MISSION</button></td>)}
             </tr>
           ))}
         </tbody>

@@ -36,6 +36,11 @@ nav ul li a:hover {
   color: #0290ff;
 }
 
+nav ul li a:focus {
+  color: #0290ff;
+  text-decoration: underline;
+}
+
 .mainHeader {
   display: flex;
   justify-content: center;
