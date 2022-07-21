@@ -13,7 +13,8 @@ th {
 }
 
 .missions-table td .reserved-flag {
-  background-color: rgb(27, 162, 185);;
+  background-color: #0290ff;
+  border-radius: 5px;
 }
 
 .missions-table tr:nth-child(even) {
@@ -26,5 +27,18 @@ th {
 
 .missions-table table button {
   background-color: white;
-  height: 30px;
+
+  /* color: white; */
+
+  /* border: 2px #0290ff solid; */
+  border-radius: 5px;
+  height: 35px;
+}
+
+.missions-table table .join {
+  background-color: #0290ff;
+  color: white;
+  border: 2px #0290ff solid;
+  border-radius: 5px;
+  height: 35px;
 }

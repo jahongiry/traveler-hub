@@ -35,14 +35,14 @@ const DisplayMissions = () => {
               {data.reserved && (
               <td className="mission-name">
                 {data.mission_name}
-                <span className="reserved-flag">&nbsp;&nbsp;Reserved!</span>
+                <span className="reserved-flag">&nbsp;Reserved!&nbsp;</span>
               </td>
               )}
               <td>{data.description}</td>
-              {data.reserved && (<td><button id={data.mission_id} type="submit">ACTIVE MEMBER</button></td>)}
+              {data.reserved && (<td><button className="join" id={data.mission_id} type="submit">ACTIVE MEMBER</button></td>)}
               {!data.reserved && (<td><button id={data.mission_id} type="submit">NOT A MEMBER</button></td>)}
               {data.reserved && (<td><button onClick={cancelJoining} id={data.mission_id} type="submit">LEAVE MISSION</button></td>)}
-              {!data.reserved && (<td><button onClick={handleChange} id={data.mission_id} type="submit">JOIN MISSION</button></td>)}
+              {!data.reserved && (<td><button className="join" onClick={handleChange} id={data.mission_id} type="submit">JOIN MISSION</button></td>)}
             </tr>
           ))}
         </tbody>
