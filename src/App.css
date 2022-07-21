@@ -1,3 +1,11 @@
+body {
+  background-color: whitesmoke;
+}
+
+table {
+  background-color: white;
+}
+
 .missions-table table {
   border-collapse: collapse;
   width: 88%;
@@ -27,10 +35,6 @@ th {
 
 .missions-table table button {
   background-color: white;
-
-  /* color: white; */
-
-  /* border: 2px #0290ff solid; */
   border-radius: 5px;
   height: 35px;
 }
@@ -41,4 +45,9 @@ th {
   border: 2px #0290ff solid;
   border-radius: 5px;
   height: 35px;
+}
+
+.missions-table table .leave {
+  color: red;
+  border: 2px red solid;
 }
