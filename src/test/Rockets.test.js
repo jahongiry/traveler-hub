@@ -3,17 +3,17 @@ import renderer from 'react-test-renderer';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import store from '../redux/configureStore';
-import DisplayMissions from '../components/displayMissions';
+import Rockets from '../components/Rockets';
 
-it('Missions component snapshot testing', () => {
-  const missions = renderer
+it('Rockets component snapshot testing', () => {
+  const rockets = renderer
     .create(
       <Provider store={store}>
         <BrowserRouter>
-          <DisplayMissions />
+          <Rockets />
         </BrowserRouter>
       </Provider>,
     )
     .toJSON();
-  expect(missions).toMatchSnapshot();
+  expect(rockets).toMatchSnapshot();
 });
