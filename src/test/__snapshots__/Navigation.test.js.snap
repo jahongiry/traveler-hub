@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Navigation Builds the snapchot of the navbar component safely 1`] = `
+exports[`Builds the snapchot of the navbar component safely 1`] = `
 <nav
   className="navBar"
 >
