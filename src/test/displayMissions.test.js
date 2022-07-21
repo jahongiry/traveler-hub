@@ -1,16 +1,16 @@
 import { render, screen } from '@testing-library/react';
-import { BrowserRouter as Router } from 'react-router-dom';
+// import { BrowserRouter as Router } from 'react-router-dom';
 import renderer from 'react-test-renderer';
 import DisplayMissions from '../components/displayMissions';
 
 describe('MissionDisplay', () => {
   test('Builds the snapchot of the displayMission component safely', () => {
-    const displayMission = renderer.create(<Router><DisplayMissions /></Router>).toJSON();
-    expect(displayMission).toMatchSnapshot();
+    const displayMission = renderer.create(<DisplayMissions />);
+    expect(displayMission.toJSON()).toMatchSnapshot();
   });
 
   test('renders DisplayMission component', () => {
-    render(<Router><DisplayMissions /></Router>);
+    render(<DisplayMissions />);
 
     screen.getByRole('component');
   });
