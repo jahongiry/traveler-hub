@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
-// import Missions from "./components/Missons";
 import { useDispatch } from 'react-redux';
 import DisplayMissions from './components/displayMissions';
 import Navigation from './components/Navigation';

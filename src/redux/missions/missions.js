@@ -16,7 +16,6 @@ export const missionInfo = createSlice({
           reserved: false,
         });
       });
-      // console.log(missionArray);
       return missionArray;
     },
 
@@ -26,7 +25,6 @@ export const missionInfo = createSlice({
         if (mission.mission_id !== lastState) { return mission; }
         return { ...mission, reserved: true };
       });
-      // console.log(newState);
       return newState;
     },
 
