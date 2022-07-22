@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Builds the snapchot of the navbar component safely 1`] = `
+<nav
+  className="navBar"
+>
+  <div
+    className="mainHeader"
+  >
+    <img
+      alt="website logo"
+      src="planet.png"
+    />
+    <h1>
+      Space Travaler's Hub
+    </h1>
+  </div>
+  <ul>
+    <li>
+      <a
+        aria-current="page"
+        className="active"
+        href="/"
+        onClick={[Function]}
+      >
+        Rockets
+      </a>
+    </li>
+    <li>
+      <a
+        className=""
+        href="/missions"
+        onClick={[Function]}
+      >
+        Missions
+      </a>
+    </li>
+    <li>
+      <a
+        className=""
+        href="/myprofile"
+        onClick={[Function]}
+      >
+        My profile
+      </a>
+    </li>
+  </ul>
+</nav>
+`;

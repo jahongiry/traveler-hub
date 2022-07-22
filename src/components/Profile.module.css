@@ -1,0 +1,16 @@
+.mainContainer {
+  margin: 5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.containerRocket {
+  display: flex;
+  flex-direction: column;
+}
+
+.items {
+  padding: 1.2rem 0.5rem;
+  text-align: left;
+  width: 25rem;
+}
